@@ -15111,7 +15111,6 @@ Dimension 6           -0.2080       -0.0094
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer:</strong></p>
-<p>Analyzing cumulative sums of variance results, the first and second principal components explained variance is 72.52%. Total explained variance for first four principal components is at 92.79%</p>
 
 <pre><code>Cumulative sums of variance by dimension
 Dimension 1    0.4993
@@ -15129,7 +15128,8 @@ Dimension 3              0.1049 -0.7452  0.1544  -0.0204  0.2670           -0.23
 Dimension 4              0.0978  0.2667  0.1375   0.0710 -0.7133           -0.3157        0.5445 
 Dimension 5              0.0488  0.0114  0.7083   0.3168  0.0671           -0.4729       -0.4120
 Dimension 6              0.0233 -0.0543 -0.5177   0.8267  0.0471           -0.2080       -0.0094</code></pre>
-<p>As per visualizations above, first 4 dimensions indicate that spending patterns is dominated (to 92.79%) by these:</p>
+<p>Analyzing cumulative sums of variance results and detailed PCA results along with heat maps of correlations and variance, we can assess each dimension and its cumulative effect on explained variance. It will also help us to determine which features are well represented by each dimension, both in terms of positive as well as negative variance. A positive increase in a specific dimension corresponds with an increase of the positively weighted features and decrease of the negatively weighted features. The rate of increase or decrease is based on a feature's weight.</p>
+<p>The first and second principal components explained variance is 72.52%. Total explained variance for first four principal components is at 92.79%. Using detailed PCA detailed results and heat map  visualizations above, first 4 dimensions indicate that spending patterns is dominated (to 92.79%) by these:</p>
 <p>According to the analysis of explained variance above, the first four dimensions indicate that spending behavior is dominated by the features with the highest correlations to these dimensions:</p>
 
 <pre><code>"Detergents_Paper"
@@ -15139,17 +15139,21 @@ Dimension 6              0.0233 -0.0543 -0.5177   0.8267  0.0471           -0.20
 
 </code></pre>
 <p>The above features appear to be the most important features relevant to spending behavior.</p>
-<p>Le us discuss now the results of the bar plots and heat maps given above:</p>
+<p>Detailed discussion of results of the bar plots and heat maps given above:</p>
 <p><strong>Dimension 1 - Principal Component 1</strong>
 49.93% of the dataset variance lies along this axis which is the largest part of the variance, hence this is the first principal component (PC1). This  is further split in variations among the several features, as shown in the pair of heat maps above, "Detergents_Paper" is the feature that has the highest correlation (0.7595) with PC1 and explains 57.69% of the variance along PC1.</p>
-<p>"Grocery" has moderate correlation at 0.45, followed by "Milk" at 0.41. Variance of "Grocery" is at 20.3% and "Milk" is at 16.8%. "Frozen" and "Fresh" are weakly and negatively correlated to PC1, while "Delicatessen" is weakly correlated with PC1. They explain negligible variance as indicated in heat maps.</p>
+<p>"Grocery" has moderate correlation at 0.45, followed by "Milk" at 0.41. Variance of "Grocery" is at 20.3% and "Milk" is at 16.8%.</p>
+<p>"Delicatessen" is weakly correlated with PC1 at 0.15 with variance of 2.5%. last 3 features explain negligible variance of a total of around 5% on PC1 as indicated in heat maps.
+"Frozen" is weakly and negatively correlated at -0.12 with variance of 1.6% and "Fresh" is weakly and negatively correlated to PC1 as well with correlation at -0.09 and variance of 0.95%. Effects of "Frozen" and "Fresh" on PC1 are relatively small, and they are negative, meaning any increase in these features has a decreasing effect on PC1 to small extent.</p>
 <p><strong>Dimension 2 - Principal Component 2</strong>
-22.59% of the dataset variance lies along this axis, making it second principal component (PC2). Here "Frozen" has the highest correlation at 0.63, followed by "Fresh" at 0.60 and "Delicatessen" at 0.46. Each of these features explain 39.7%, 36% and 21.5% of the variance along PC2, respectively. The remaining features of PC2 are weakly correlated and explain very little of the variance as per heat map visualizations.</p>
+22.59% of the dataset variance lies along this axis, making it second principal component (PC2). Here "Frozen" has the highest correlation at 0.63, followed by "Fresh" at 0.60 and "Delicatessen" at 0.46. Each of these features explain 39.7%, 36% and 21.5% of the variance along PC2, respectively.</p>
+<p>"Milk" exhibits very weak correlation of 0.14 with variance of 1.9%, followed by "Grocery" exhibits very weak correlation at 0.09 with variance of 0.73% to PC2. Whereas "Detergent_Paper" shows weak and negative correlation of -0.04 with variance of 0.14%. Overall, last 3 features contribute a total of around 2.7% variance.</p>
 <p><strong>Dimension 3 - Principal Component 3</strong>
-10.49% of the dataset variance lies along this axis, making it third principal component (PC3). Here "Fresh" has the largest negative correlation at -0.745, explaining 55.5% of the variance. "Delicatessen" is positively correlated at 0.54 which explains 29.4% of the variance. "Frozen" is negatively correlated at 0.26 explaining 7% of the variance. The remaining features of PC3 are weakly correlated and explain very little of the variance
- as per heat map visualizations.</p>
+10.49% of the dataset variance lies along this axis, making it third principal component (PC3). Here "Fresh" has the largest negative correlation at -0.745, explaining 55.5% of the variance. "Delicatessen" is positively correlated at 0.54 which explains 29.4% of the variance. "Frozen" is negatively correlated at 0.26 explaining 7% of the variance.</p>
+<p>"Milk" exhibits very weak correlation of 0.15 with variance of 2.38%, followed by "Grocery" exhibits very weak negative correlation at -0.02 with variance of 0.04% to PC3. Whereas "Detergent_Paper" shows weak and negative correlation of -0.24 with variance of 5.5%. Overall, last 3 features contribute a total of around 7.8% variance for this PC.</p>
 <p><strong>Dimension 4 - Principal Component 4</strong>
-9.8% of the dataset variance lies along this axis, making it fourth principal component (PC4). Here, "Frozen" has the largest negative correlation at -0.71 to the axis and explains 50.8% of the variance. "Delicatessen" correlates at 0.54 and explains 29.6% of the variance. "Fresh" is positively correlated at around 0.26 with the axis explaining 7.1% of variance. The remaining features of PC4 are weakly correlated and explain little of the variance.</p>
+9.8% of the dataset variance lies along this axis, making it fourth principal component (PC4). Here, "Frozen" has the largest negative correlation at -0.71 to the axis and explains 50.8% of the variance. "Delicatessen" correlates at 0.54 and explains 29.6% of the variance. "Fresh" is positively correlated at around 0.26 with the axis explaining 7.1% of variance.</p>
+<p>"Milk" exhibits weak correlation of 0.14 with variance of 1.9%, followed by "Grocery" which exhibits very weak  correlation at 0.07 with variance of 0.5% to PC4. Whereas "Detergent_Paper" shows weak and negative correlation of -0.32 with variance of 10%. Overall, last 3 features contribute a total of around 12.4% variance for this PC.</p>
 
 </div>
 </div>
